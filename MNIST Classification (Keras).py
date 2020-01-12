@@ -30,6 +30,6 @@ model.fit(train_images, train_labels, epochs = 10, batch_size = 64, validation_s
 
 # To save the Keras Model of name 'file.h5'
 model.save_weights('file.h5')
-
 # Load the Keras Model of name 'file.h5'
 model.load_weights('file.h5')
+
