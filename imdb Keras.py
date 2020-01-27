@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jan 18 14:05:43 2020
-
-@author: Chirag
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -47,36 +40,19 @@ from keras import optimizers
 from keras import metrics
 from keras import losses
 
+# Making model
 model = models.Sequential()
 model.add(layers.Dense(32, activation = 'relu', input_shape = (1000, )))
 model.add(layers.Dense(32, activation = 'relu'))
 model.add(layers.Dense(1, activation = 'sigmoid'))
 
-model.compile(optimizer = 'rmsprop', loss = losses.binary_crossentropy, metrics = [metrics.binary_accuracy])
-# optimizers.RMSprop(lr = 0.001)
-# model.compile(optimizer = optimizers.RMSprop(lr = 0.001), loss = 'binary_crossentropy', metrics = ['binary_accuracy'])
+model.compile(optimizer = 'rmsprop', loss = losses.binary_crossentropy, metrics = ["accuracy"])
 
-# model.compile(optimizer = optimizers.RMSprop(lr = 0.001), loss = losses.binary_crossentropy, metrics = [metrics.binary_accuracy])
-
-history = model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 20, batch_size = 1024)
-
-# As we can see the accuracy the model is start overfitting the model
-# from epoch 7 as the accuracy remains constant around that accuracy
-
-# model.fit(X_train, y_train, validation_split = 0.1, epochs = 5, batch_size = 512)
-
-# Validation_data = In this we provide the seprate data for validation and
-# Validation_split = In this the validation data is seprate out from the testing data
-
+history = model.fit(Partial_X_train, Partial_y_train, validation_data = (X_val, y_val), epochs = 20, batch_size = 1024)
 
 history_dict = history.history
 print(history_dict)
 print(history_dict.keys())
-
-# =============================================================================
-# score = model.evaluate(X_test, y_test)
-# score
-# =============================================================================
 
 
 # Ploting the Training and Validation loss
@@ -116,8 +92,9 @@ Acc_plot()
 the training data '''
 
 ''' Hence retrain the model over the 7 epochs '''
-''' Doing more tuning in this model '''
+''' And doing more tuning in this model '''
 
+# Here model1 is the final model we aget after tunning :-
 
 model1 = models.Sequential()
 model1.add(layers.Dense(64, activation = 'tanh', input_shape = (1000, )))
@@ -141,13 +118,13 @@ print(y_pred)
 
 ''' Near to 0 - means negative
 Near to 1 - means positive
-Model is much confident about this prediction
-but
-for value like 0.4, 0.6 model is less confident '''
+Model is much confident about this prediction but for value like 0.4, 0.6 model is less confident '''
 
-y_pred1 = np.around(y_pred)
-print(y_pred1)
+y_pred_value = np.around(y_pred)
+print(y_pred_value)
 
+
+# Here I use the findhypara  module which is created by me to find out the best hyperparameter just by trying all the architechture combinations jst by providing the paarmetetrs.
 
 from findhypara import BestModel
 bm = BestModel()
