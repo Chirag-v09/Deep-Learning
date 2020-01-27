@@ -54,15 +54,14 @@ history_dict = history.history
 print(history_dict)
 print(history_dict.keys())
 
-
-# Ploting the Training and Validation loss
-
 loss_values = history_dict["loss"]
 val_loss_values = history_dict["val_loss"]
 acc = history_dict["binary_accuracy"]
 val_acc = history_dict["val_binary_accuracy"]
 
 epochs = np.arange(0, len(loss_values))
+
+# Ploting the Training and Validation loss
 
 def Loss_plot():
     plt.plot(epochs, loss_values, 'bo', label = 'Training Loss')
@@ -125,7 +124,7 @@ print(y_pred_value)
 
 
 # Here I use the findhypara  module which is created by me to find out the best hyperparameter just by trying all the architechture combinations jst by providing the paarmetetrs.
-
+# You can find this model in my special-codes repository
 from findhypara import BestModel
 bm = BestModel()
 history = bm.findmodel(Partial_X_train, Partial_y_train, (1000, ), 1, "tanh", "relu", "sigmoid", "rmsprop", "binary_crossentropy", ["accuracy"], 6, "combination", X_val, y_val, [3], [64, 128], [64])
