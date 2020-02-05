@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 12 13:43:27 2019
-
-@author: Chirag
-"""
-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,4 +20,4 @@ for i in range(n_iter):
     gradients = 2/m*X.T@((X @ theta) - y)
     theta = theta - eta*gradients
 
-Here theta is wieghts that updated through the gradient decent
+# Here theta is wieghts that updated through the gradient decent
