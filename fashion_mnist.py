@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 30 13:18:03 2020
-
-@author: Chirag
-"""
 
 import tensorflow as tf
 from tensorflow import keras
