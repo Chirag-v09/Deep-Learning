@@ -5,6 +5,8 @@ Created on Sun Feb  9 08:37:39 2020
 @author: Chirag
 """
 
+# Capture the image by just when the WebCam is opened
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
