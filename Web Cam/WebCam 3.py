@@ -5,6 +5,8 @@ Created on Sun Feb  9 13:10:24 2020
 @author: Chirag
 """
 
+# To capture a particular image from the Real-Time video
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
