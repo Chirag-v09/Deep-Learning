@@ -5,7 +5,7 @@ Created on Wed Feb 12 20:19:03 2020
 @author: Chirag
 """
 
-# Using Transfer Learning in cifar-10 dataset
+# Using Transfer Learning in cifar-10 dataset using pretrained Model MobileNetv2 and trained on "imagenet" dataset.
 
 import numpy as np
 import matplotlib.pyplot as plt
