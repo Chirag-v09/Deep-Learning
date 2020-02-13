@@ -42,4 +42,4 @@ if ret:
     plt.show()
 
 else:
-    print("No Image OPened")
+    print("No Image Opened")
