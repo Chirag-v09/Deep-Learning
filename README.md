@@ -1,3 +1,3 @@
 # Deep-Learning
 
-Here are my some Deep Learning Projects and importtant concepts.
+Here are my some of the Deep Learning Projects and important concepts.
